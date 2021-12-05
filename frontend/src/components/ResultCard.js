@@ -1,17 +1,19 @@
 import React from 'react'
+import { Box, CardBody, Image } from "../styles/ResultCard";
 
 export default function ResultCard(props) {
   const { name, city, imgSrc, specialty } = props;
   return (
-    <div>
-      <div>
-        <p>{name}</p>
-        <p>{city}</p>
-        <p>{specialty}</p>
-      </div>
+    <Box>
+      <CardBody>
+        <span>Company Name:{name}</span>
+        <span>From: {city}</span>
+        <span>Specialty: {specialty}</span>
+      </CardBody>
 
-      <img src={imgSrc}
+      <Image
+        src={imgSrc}
         alt={name} />
-    </div>
+    </Box>
   )
 }

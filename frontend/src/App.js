@@ -1,22 +1,20 @@
 import InputField from './components/InputField';
 import ToggleSwitch from './components/ToggleSwitch'
 import ResultCard from './components/ResultCard'
-import { useState, useEffect } from 'react'
-import { Home, Card, Navbar, FormBox } from "./styles/App";
+import { useState, useEffect, useReducer } from 'react'
+import { Home, Results, Navbar, FormBox } from "./styles/App";
 import React, { Fragment } from 'react';
 import GlobalStyle from './styles/globalStyles';
 
 
 function App() {
+  // Data coming from API
   const [data, setData] = useState([]);
-  const [value, setCheckbox] = useState(true);
-  const [state, setState] = useState({
-    companyName: '',
-    Excavation: true,
-    Plumbing: true,
-    Electrical: true,
-  });
 
+  // component state
+  const [excavationValue, setExcavation] = useState(true);
+  const [plumbingValue, setPlumbing] = useState(true);
+  const [electricalValue, setElectrical] = useState(true);
   const [filterCompanies, setFilterCompanies] = useState("");
 
   useEffect(() => {
@@ -35,6 +33,16 @@ function App() {
     setFilterCompanies(e.target.value)
   };
 
+  const filterResults = function () {
+    return data.filter((value) => {
+      if (filterCompanies === "") {
+        return value;
+      } else if (value.company_name.toLowerCase().includes(filterCompanies.toLowerCase())) {
+        return value;
+      }
+    });
+  }
+
   return (
     <Fragment>
       <GlobalStyle />
@@ -49,36 +57,30 @@ function App() {
             <div>
               <ToggleSwitch title="Excavation"
                 size="xs"
-                value={value}
-                checked={value}
-                onChange={({ target }) => setCheckbox(!value)} />
+                value={excavationValue}
+                checked={excavationValue}
+                onChange={({ target }) => setExcavation(!excavationValue)} />
               <ToggleSwitch title="Plumbing"
                 size="xs"
-                value={value}
-                checked={value}
-                onChange={({ target }) => setCheckbox(!value)} />
+                value={plumbingValue}
+                checked={plumbingValue}
+                onChange={({ target }) => setPlumbing(!plumbingValue)} />
               <ToggleSwitch title="Electrical"
                 size="xs"
-                value={value}
-                checked={value}
-                onChange={({ target }) => setCheckbox(!value)} />
+                value={electricalValue}
+                checked={electricalValue}
+                onChange={({ target }) => setElectrical(!electricalValue)} />
             </div>
           </FormBox>
         </Navbar>
-        <Card>RESULTS
-          {data.filter((value) => {
-            if (filterCompanies === "") {
-              return value;
-            } else if (value.company_name.toLowerCase().includes(filterCompanies.toLowerCase())) {
-              return value;
-            }
-          }).map(
+        <Results><p>RESULTS:</p>
+          {filterResults().map(
             (el, index) => {
               const {specialty, city, company_name, logo} = el
               return <ResultCard key={index} name={company_name} city={city} imgSrc={logo} specialty={specialty} />
             }
           )}
-        </Card>
+        </Results>
       </Home>
     </Fragment>
   );
