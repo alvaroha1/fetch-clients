@@ -64,7 +64,7 @@ export const Slider = styled.span`
   }
 
   ${Input}:checked + & {
-    background-color: var(--mainColor);
+    background-color: var(--textColor);
   }
 
   ${Input}:checked + &::before {

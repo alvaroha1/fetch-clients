@@ -9,15 +9,13 @@ export const Input = styled.input`
   appearance: none;
   height: 40px;
   width: 320px;
-  border: 2px solid rgba(55, 53, 214, 0.5);
+  border: 2px solid var(--textColor);
   border-radius: 8px;
   font-size: 16px;
   padding-left: 16px;
   padding-right: 16px;
-  color: rgba(55, 53, 214, 0.5);
+  color: var(--textColor);
   transition-property: border, color;
   transition-duration: 400ms;
-  border: 2px solid rgba(55, 53, 214, 1);
-  color: rgba(55, 53, 214, 1);
 `;
 
