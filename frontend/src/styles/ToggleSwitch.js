@@ -11,6 +11,7 @@ export const Box = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: left;
+  padding: 6px;
 `;
 
 export const Label = styled.label`

@@ -95,9 +95,9 @@ function App() {
           <div> <h1>
             WELCOME
           </h1>
-            <p>Type a name to filter by name, or use the checkboxes to filter by speciality.</p></div>
+            <p>Type a name to filter by company name, or use the checkboxes to filter by company specialty.</p></div>
           <FormBox>
-            <InputField placeholder="Filter by company name..." name="company_name" type="text" required={false} handleInput={handleChange}/>
+            <InputField placeholder="Search for company..." name="company_name" type="text" required={false} handleInput={handleChange}/>
             <div>
               <ToggleSwitch
                 title="Excavation"

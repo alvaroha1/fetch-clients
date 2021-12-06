@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-
-
 export const Input = styled.input`
   position: relative;
   width: 320px;
@@ -17,5 +15,11 @@ export const Input = styled.input`
   color: var(--textColor);
   transition-property: border, color;
   transition-duration: 400ms;
+`;
+
+export const Box = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 

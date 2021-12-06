@@ -20,6 +20,12 @@ export const Navbar = styled.div`
   background-color: var(--white);
   text-align: center;
   box-shadow: 2px 50px 50px rgb(0 38 119 / 2%), 2px 5px 20px rgb(0 38 119 / 5%);
+
+  p {
+    text-align: left;
+    padding: 6px 16px;
+    margin: 0px;
+  }
 `;
 
 export const FormBox = styled.div`

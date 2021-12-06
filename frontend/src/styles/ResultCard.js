@@ -17,6 +17,20 @@ export const CardBody = styled.div`
   flex-direction: column;
 `;
 
+export const Name = styled.span`
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  color: var(--black);
+  font-weight: 900;
+`;
+
+export const Text = styled.span`
+     font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: 'CircularStd';
+    color: var(--textColor);
+`;
+
 export const Image = styled.img`
   background-size: cover;
   background-position: center;

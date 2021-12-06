@@ -1,11 +1,11 @@
 import React from 'react'
-import { Input } from "../styles/InputField";
+import { Input, Box } from "../styles/InputField";
 
 export default function InputField(props) {
   const { name, type, required, handleInput, placeholder } = props;
   return (
-    <div>
+    <Box>
         <Input placeholder={placeholder} name={name} type={type} required={required} onChange={handleInput} />
-    </div>
+    </Box>
   )
 }
