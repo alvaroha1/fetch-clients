@@ -1,5 +1,5 @@
-# fetch-clients
-- frontend and backend in different folders, please install dependencies for both parts.
+# Fetch-Clients
+- Frontend and backend in different folders, please install dependencies for both parts.
 
 ## Frontend
 - React app
